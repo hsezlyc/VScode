@@ -1,3 +1,2 @@
 import torch
-x=torch.rand(2,3)
-print(x)
+x=torch.rand(5,5)
