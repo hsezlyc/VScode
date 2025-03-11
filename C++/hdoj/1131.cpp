@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 #define LL long long
-#define RADIX 1000000000   // 更改为1e9以防止溢出
+#define RADIX 1000000000
 #define N 1000             
+
 
 void mul(LL *a, int b, int &lenA) {
     LL carry = 0;
@@ -60,7 +62,6 @@ void CatalanFactorial(LL result[], int &lenResult, int n) {
         for (int j = 0; j < lenF; ++j) {
             LL temp = c[i] * f[j];
             int pos = i + j;
-            // 处理进位
             while (temp > 0) {
                 temp += result[pos];
                 result[pos] = temp % RADIX;
@@ -77,7 +78,7 @@ void CatalanFactorial(LL result[], int &lenResult, int n) {
 void output(LL *a, int lenA) {
     printf("%lld", a[lenA - 1]);
     for (int i = lenA - 2; i >= 0; --i) {
-        printf("%09lld", a[i]); // 格式改为%09以匹配RADIX 1e9
+        printf("%09lld", a[i]);
     }
     printf("\n");
 }
